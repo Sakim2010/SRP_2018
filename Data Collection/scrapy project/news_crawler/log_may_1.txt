@@ -1,0 +1,57 @@
+2018-06-13 20:42:58 [scrapy.utils.log] INFO: Scrapy 1.5.0 started (bot: news_crawler)
+2018-06-13 20:42:58 [scrapy.utils.log] INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-10-10.0.17134
+2018-06-13 20:42:58 [scrapy.crawler] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'news_crawler.spiders', 'FEED_URI': 'may_1.csv', 'SPIDER_MODULES': ['news_crawler.spiders'], 'BOT_NAME': 'news_crawler', 'ROBOTSTXT_OBEY': True, 'FEED_FORMAT': 'csv', 'LOG_FILE': 'log_may_1.txt'}
+2018-06-13 20:42:58 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2018-06-13 20:42:58 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'news_crawler.middlewares.RotateUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2018-06-13 20:42:58 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-06-13 20:42:58 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2018-06-13 20:42:58 [scrapy.core.engine] INFO: Spider opened
+2018-06-13 20:42:58 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-06-13 20:42:58 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-06-13 20:42:58 [py.warnings] WARNING: c:\python27\lib\site-packages\scrapy\core\downloader\__init__.py:65: UserWarning: QuotesSpider.DOWNLOAD_DELAY attribute is deprecated, use QuotesSpider.download_delay instead
+  (type(spider).__name__, type(spider).__name__))
+
+2018-06-13 20:42:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.dawn.com/robots.txt> (referer: None)
+2018-06-13 20:43:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.dawn.com/archive/2018-05-01> (referer: None)
+2018-06-13 20:43:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.dawn.com/news/1405015/badin-journalist-arrested-for-sexually-abusing-teenage-boy-say-police> (referer: https://www.dawn.com/archive/2018-05-01)
+2018-06-13 20:43:05 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.dawn.com/news/1405015/badin-journalist-arrested-for-sexually-abusing-teenage-boy-say-police> (referer: https://www.dawn.com/archive/2018-05-01)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "C:\Users\Saaim Ullah Khattak\Desktop\scrapy project\news_crawler\news_crawler\spiders\news.py", line 154, in parse_details
+    if '40' in response.status:
+TypeError: argument of type 'int' is not iterable
+2018-06-13 20:43:06 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2018-06-13 20:43:06 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2018-06-13 20:43:07 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown

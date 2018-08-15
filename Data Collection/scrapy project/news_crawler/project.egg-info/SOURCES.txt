@@ -1,0 +1,14 @@
+setup.py
+news_crawler/__init__.py
+news_crawler/items.py
+news_crawler/middlewares.py
+news_crawler/pipelines.py
+news_crawler/settings.py
+news_crawler/spiders/__init__.py
+news_crawler/spiders/news.py
+news_crawler/spiders/purana_news.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt
